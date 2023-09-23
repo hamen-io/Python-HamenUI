@@ -1,0 +1,7 @@
+- Classes: PascalCase
+- Methods: camelCase
+- Properties: camelCase
+- Functions: camelCase
+- Variables: camelCase
+- Python Files: PascalCase
+- Namespaces: PascalCase
