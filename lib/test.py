@@ -1,4 +1,6 @@
 from Hamen import UI as HamenUI
+UIElements = HamenUI.UIElements.UIBaseElements
+from Hamen.Console import Console
 
 class HomePage(HamenUI.Types.HTTPApplication):
     def __init__(self):
@@ -6,16 +8,17 @@ class HomePage(HamenUI.Types.HTTPApplication):
 
     def draw(self):
         document = self.document
-        elements = self.UIElements
         body = document.body
 
-        body.appendChild(elements.UIText())
-        body.style.backgroundColor = "red"
-        body.classList.add("test")
-        body.innerText = "Hello World!"
-        body.setAttribute("test", "false")
+        header = UIElements.UIContainer(self)
+        header.classList.add("header")
+        header.style.minHeight = '16px'
 
-        document.title = "Bye"
+        main = UIElements.UIContainer(self)
+        main.classList.add("main")
+        main.style.flexGrow = '1'
+
+        body.appendChildren((header, main))
 
 if __name__ == "__main__":
     app = HomePage()
